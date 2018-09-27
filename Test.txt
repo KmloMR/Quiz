@@ -6,6 +6,7 @@ create tablespace quiz_noche
     extent management local
     segment space management auto;
 
+------------PARTE I----------------------------------
 =>Punto2
 create profile estudiante limit
 SESSIONS_PER_USER 5
@@ -27,3 +28,14 @@ create user user2
     identified by user2
     default tablespace quiz_noche
     quota unlimited on quiz_noche;
+
+grant create session, create table to user2
+
+--------PARTE II---------------------------------------
+create table attacks (
+	id INT,
+	url VARCHAR(2048),
+	ip_address VARCHAR(20),
+	number_of_attacks INT,
+	time_of_last_attack TIMESTAMP
+);
